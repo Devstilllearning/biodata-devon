@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/biodata-devon/', // <-- Added the base URL here
   plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
     alias: {
