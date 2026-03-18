@@ -310,12 +310,122 @@ export default function App() {
 
         {/* Avatar */}
         <div className="relative mb-8">
-          <div className="h-36 w-36 rounded-full bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-400 p-[3px] shadow-xl shadow-violet-500/30">
-            <div className="flex h-full w-full items-center justify-center rounded-full bg-slate-900 text-5xl font-black text-violet-300">
-              D
+          <div className="h-40 w-40 rounded-full bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-400 p-[3px] shadow-2xl shadow-violet-500/40 hover:shadow-violet-500/60 transition-shadow duration-500">
+            <div className="flex h-full w-full items-center justify-center rounded-full bg-slate-900 overflow-hidden">
+              <svg viewBox="0 0 200 200" className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                {/* Background */}
+                <defs>
+                  <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1e1b4b" />
+                    <stop offset="100%" stopColor="#0f172a" />
+                  </linearGradient>
+                  <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#f5d0a9" />
+                    <stop offset="100%" stopColor="#e8b88a" />
+                  </linearGradient>
+                  <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1a1a2e" />
+                    <stop offset="100%" stopColor="#16213e" />
+                  </linearGradient>
+                  <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#7c3aed" />
+                    <stop offset="100%" stopColor="#6d28d9" />
+                  </linearGradient>
+                  <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#4c1d95" />
+                    <stop offset="100%" stopColor="#3b0764" />
+                  </linearGradient>
+                  <linearGradient id="glassesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#06b6d4" />
+                    <stop offset="100%" stopColor="#8b5cf6" />
+                  </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="2" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+                <circle cx="100" cy="100" r="100" fill="url(#bgGrad)" />
+
+                {/* Body / Hoodie */}
+                <ellipse cx="100" cy="195" rx="70" ry="45" fill="url(#hoodieGrad)" />
+                <ellipse cx="100" cy="190" rx="55" ry="30" fill="url(#shirtGrad)" />
+                {/* Hoodie strings */}
+                <line x1="90" y1="165" x2="88" y2="185" stroke="#a78bfa" strokeWidth="1.5" />
+                <line x1="110" y1="165" x2="112" y2="185" stroke="#a78bfa" strokeWidth="1.5" />
+                {/* Code symbol on shirt */}
+                <text x="100" y="185" textAnchor="middle" fill="#c4b5fd" fontSize="14" fontFamily="monospace" fontWeight="bold">&lt;/&gt;</text>
+
+                {/* Neck */}
+                <rect x="90" y="140" width="20" height="20" rx="5" fill="url(#skinGrad)" />
+
+                {/* Head */}
+                <ellipse cx="100" cy="105" rx="42" ry="48" fill="url(#skinGrad)" />
+
+                {/* Hair */}
+                <ellipse cx="100" cy="72" rx="44" ry="30" fill="url(#hairGrad)" />
+                <path d="M56 90 Q58 65 75 58 Q60 80 62 95 Z" fill="url(#hairGrad)" />
+                <path d="M144 90 Q142 65 125 58 Q140 80 138 95 Z" fill="url(#hairGrad)" />
+                {/* Hair detail / highlights */}
+                <path d="M80 60 Q90 50 100 55 Q95 48 85 52 Z" fill="#2d2b55" opacity="0.5" />
+
+                {/* Eyes */}
+                <ellipse cx="82" cy="105" rx="8" ry="8" fill="white" />
+                <ellipse cx="118" cy="105" rx="8" ry="8" fill="white" />
+                <ellipse cx="84" cy="105" rx="5" ry="5.5" fill="#1e1b4b" />
+                <ellipse cx="120" cy="105" rx="5" ry="5.5" fill="#1e1b4b" />
+                {/* Eye shine */}
+                <circle cx="86" cy="103" r="2" fill="white" />
+                <circle cx="122" cy="103" r="2" fill="white" />
+
+                {/* Gaming glasses / tech glasses */}
+                <rect x="70" y="96" width="24" height="18" rx="5" fill="none" stroke="url(#glassesGrad)" strokeWidth="2.5" filter="url(#glow)" />
+                <rect x="106" y="96" width="24" height="18" rx="5" fill="none" stroke="url(#glassesGrad)" strokeWidth="2.5" filter="url(#glow)" />
+                <line x1="94" y1="104" x2="106" y2="104" stroke="url(#glassesGrad)" strokeWidth="2" />
+                <line x1="70" y1="104" x2="60" y2="100" stroke="url(#glassesGrad)" strokeWidth="2" />
+                <line x1="130" y1="104" x2="140" y2="100" stroke="url(#glassesGrad)" strokeWidth="2" />
+
+                {/* Eyebrows */}
+                <path d="M72 92 Q82 86 94 91" fill="none" stroke="#1a1a2e" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M106 91 Q118 86 128 92" fill="none" stroke="#1a1a2e" strokeWidth="2.5" strokeLinecap="round" />
+
+                {/* Nose */}
+                <path d="M98 115 Q100 120 102 115" fill="none" stroke="#d4a574" strokeWidth="1.5" strokeLinecap="round" />
+
+                {/* Smile */}
+                <path d="M88 125 Q100 135 112 125" fill="none" stroke="#c4956a" strokeWidth="2" strokeLinecap="round" />
+
+                {/* Headphone */}
+                <path d="M55 100 Q55 60 100 55 Q145 60 145 100" fill="none" stroke="#374151" strokeWidth="5" strokeLinecap="round" />
+                <rect x="47" y="95" width="12" height="22" rx="6" fill="#4b5563" />
+                <rect x="141" y="95" width="12" height="22" rx="6" fill="#4b5563" />
+                <rect x="49" y="98" width="8" height="16" rx="4" fill="#7c3aed" />
+                <rect x="143" y="98" width="8" height="16" rx="4" fill="#7c3aed" />
+                {/* Headphone glow */}
+                <rect x="49" y="98" width="8" height="16" rx="4" fill="none" stroke="#a78bfa" strokeWidth="0.5" opacity="0.8" />
+                <rect x="143" y="98" width="8" height="16" rx="4" fill="none" stroke="#a78bfa" strokeWidth="0.5" opacity="0.8" />
+
+                {/* Small gaming controller icon floating */}
+                <g transform="translate(150, 55) scale(0.6)" opacity="0.7" filter="url(#glow)">
+                  <rect x="0" y="5" width="30" height="18" rx="8" fill="#7c3aed" />
+                  <circle cx="9" cy="14" r="3" fill="#a78bfa" />
+                  <circle cx="21" cy="14" r="2" fill="#06b6d4" />
+                  <circle cx="25" cy="10" r="2" fill="#f472b6" />
+                </g>
+
+                {/* Small code brackets floating */}
+                <g transform="translate(30, 55)" opacity="0.6" filter="url(#glow)">
+                  <text fill="#06b6d4" fontSize="16" fontFamily="monospace" fontWeight="bold">{`{ }`}</text>
+                </g>
+              </svg>
             </div>
           </div>
-          <span className="absolute bottom-1 right-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-500 ring-4 ring-slate-950">
+          {/* Animated ring */}
+          <div className="absolute -inset-2 rounded-full border-2 border-violet-500/20 animate-[spin_8s_linear_infinite]" />
+          <div className="absolute -inset-4 rounded-full border border-cyan-500/10 animate-[spin_12s_linear_infinite_reverse]" />
+          <span className="absolute bottom-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-green-500 ring-4 ring-slate-950">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
           </span>
         </div>
